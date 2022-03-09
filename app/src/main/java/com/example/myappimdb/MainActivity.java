@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void fetchMovies() {
-        String url="https://www.json-generator.com/api/json/get/cfsXpfGwwO?indent=2";
+        String url="file:///D:/generated.json";
 
         JsonArrayRequest jsonArrayRequest=new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override
