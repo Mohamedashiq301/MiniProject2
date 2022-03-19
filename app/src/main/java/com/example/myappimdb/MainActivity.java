@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.os.TokenWatcher;
 import android.util.JsonReader;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //Log.i("MainActivity","onCreateView called");
 
         recyclerView=findViewById(R.id.moviesRecyclerView);
         recyclerView.setHasFixedSize(true);
@@ -46,7 +48,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void fetchMovies() {
-        String url="file:///D:/generated.json";
+        String url="https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&page=2&api_key=38a73d59546aa378980a88b645f487fc&page=1" +
+                "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&page=2&api_key=38a73d59546aa378980a88b645f487fc&page=2";
 
         JsonArrayRequest jsonArrayRequest=new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override
